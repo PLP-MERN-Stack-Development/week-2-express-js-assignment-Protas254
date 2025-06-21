@@ -60,4 +60,96 @@ Your work will be automatically submitted when you push to your GitHub Classroom
 
 - [Express.js Documentation](https://expressjs.com/)
 - [RESTful API Design Best Practices](https://restfulapi.net/)
-- [HTTP Status Codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status) 
+- [HTTP Status Codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
+
+# Express.js Assignment
+
+## How to Run the Server
+
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+2. Start the development server:
+   ```bash
+   npm run dev
+   ```
+   Or, to run without nodemon:
+   ```bash
+   node index.js
+   ```
+   (Replace `index.js` with your main server file if different, e.g., `server.js`)
+
+## API Endpoints
+
+### Example: GET /api/items
+- **Description:** Retrieve a list of items.
+- **Request:**
+  ```http
+  GET /api/items
+  ```
+- **Response:**
+  ```json
+  [
+    { "id": 1, "name": "Item 1" },
+    { "id": 2, "name": "Item 2" }
+  ]
+  ```
+
+### Example: POST /api/items
+- **Description:** Create a new item.
+- **Request:**
+  ```http
+  POST /api/items
+  Content-Type: application/json
+
+  {
+    "name": "New Item"
+  }
+  ```
+- **Response:**
+  ```json
+  { "id": 3, "name": "New Item" }
+  ```
+
+### Example: GET /api/items/:id
+- **Description:** Retrieve a single item by ID.
+- **Request:**
+  ```http
+  GET /api/items/1
+  ```
+- **Response:**
+  ```json
+  { "id": 1, "name": "Item 1" }
+  ```
+
+### Example: PUT /api/items/:id
+- **Description:** Update an existing item by ID.
+- **Request:**
+  ```http
+  PUT /api/items/1
+  Content-Type: application/json
+
+  {
+    "name": "Updated Item"
+  }
+  ```
+- **Response:**
+  ```json
+  { "id": 1, "name": "Updated Item" }
+  ```
+
+### Example: DELETE /api/items/:id
+- **Description:** Delete an item by ID.
+- **Request:**
+  ```http
+  DELETE /api/items/1
+  ```
+- **Response:**
+  ```json
+  { "message": "Item deleted successfully" }
+  ```
+
+---
+
+> Update the endpoint documentation above to match your actual routes and responses.
